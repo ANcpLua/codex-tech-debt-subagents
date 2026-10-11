@@ -18,9 +18,9 @@ The diagram's automatic wrapper fallback is intentionally narrowed. A wrapper is
 
 ## Install
 
-Copy `.codex` and `.agents` into the repository root. If `.codex/config.toml` already exists, merge the four settings instead of replacing the file.
+Copy `.codex` into the repository root. If `.codex/config.toml` already exists, merge the required settings instead of replacing the file.
 
-The bundle includes the uploaded skill unchanged for portability. If the same `tech-debt` skill is already installed at user scope, omit the bundled `.agents/skills/tech-debt` directory to avoid duplicate skill entries.
+The older bundled skill was removed in favor of the stronger [canonical tech-debt skill](https://github.com/ANcpLua/skill-library/tree/main/skills/tech-debt). From a checkout of that private library, run `python3 scripts/install.py tech-debt --dest ~/.codex/skills`. Existing installations are not overwritten. For the expanded DELETE / TRANSFORM / KEEP_BOUNDARY workflow and its current role definitions, install `debt-run` from the same library; it also installs `tech-debt`. The Codex agent configuration in this repository remains a separate host adapter.
 
 Start a new Codex task from the repository root and paste `PROMPT.md`. Append an exact path or subsystem after the prompt when the audit must be narrower than the repository.
 
